@@ -47,6 +47,8 @@ int main(int argc, char const *argv[])
     v3.sort();
     show_vector(v3);
 
+    cout<<v3.size()<<endl;
+
 
     //cout<<"traverse:"<<endl;
 

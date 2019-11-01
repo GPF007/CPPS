@@ -54,7 +54,7 @@ public:
 
     /*Public interface*/
     //Read only ones
-    Rank size() const {return _size;}
+    Rank size() const { return _size; }
     Rank capacity() const {return _capacity;}
     bool empty() const {return !_size;}
     int disordered() const; //whether is ordered

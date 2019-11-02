@@ -1,3 +1,7 @@
+
+#include <queue>
+using namespace std;
+
 #define BinNodePosi(T) BinNode<T>* //pointer of node
 #define starture(p) ((p)?(p)->height:-1)
 typedef enum{RB_RED,RB_BLACK} RBColor;
@@ -76,4 +80,40 @@ BinNodePosi(T) BinNode<T>::insertAsLC(T const& e){
 template <typename T>
 BinNodePosi(T) BinNode<T>::insertAsRC(T const& e){
     return rChild = new BinNode(e,this);
+}
+
+//get next inorder travase node
+template <typename T>
+BinNodePosi(T) BinNode<T>::succ(){
+    BinNodePosi(T) x=this;
+
+    if(rChild){//in it's right subtree
+        x=rChild;
+        while(HasLChild(*x)) x=x->lChild;
+    }else{//backtrack to it ancestor
+        while(IsRChild(*x)) x=x->parent;
+        x=x->parent;
+    }
+
+    return x;
+
+}
+
+template <typename T> template<typename VST> 
+void BinNode<T>::travLevel(VST& visit){
+    queue<BinNodePosi(T)> q;
+    BinNodePosi(T) x=this;
+    q.push(x);
+
+    while(!q.empty()){
+        int n=q.size();
+        while(n--){
+            x=q.front();
+            q.pop();
+            visit(x->data);
+
+            if(x->lChild) q.push(x->lChild);
+            if(x->rChild) q.push(x->rChild);
+        }
+    }
 }

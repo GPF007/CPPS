@@ -57,5 +57,17 @@ int main(int argc, char const *argv[])
     travIn_I(tree->root(),prt);
     cout<<endl;
 
+    cout<<"Postorder recrusion:"<<endl;
+    travPost_R(tree->root(),prt);
+    cout<<endl;
+
+    cout<<"Postorder literation:"<<endl;
+    travPost_I(tree->root(),prt);
+    cout<<endl;
+
+    cout<<"Level literation:"<<endl;
+    travLevel_I(tree->root(),prt);
+    cout<<endl;
+
     return 0;
 }

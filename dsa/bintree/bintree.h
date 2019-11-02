@@ -1,5 +1,6 @@
 #include "binnode.h"
 #include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -224,7 +225,57 @@ void travIn_I(BinNodePosi(T) x,VST& visit){
         visit(x->data);
         x=x->rChild;
         
+    }  
+}
+//Postorder
+template<typename T,typename VST>
+void travPost_I(BinNodePosi(T) x,VST& visit){
+    
+    stack<BinNodePosi(T)> st;
+    BinNodePosi(T) cur=x;//current node
+    BinNodePosi(T) prev=NULL; //last visited node
+    
+    while(cur){
+        st.push(cur);
+        cur=cur->lChild;
     }
+
+    while(!st.empty()){
+        cur=st.top();
+        st.pop();
+        if(!cur->rChild || prev == cur->rChild){
+            visit(cur->data);
+            prev=cur;
+        }else{
+            st.push(cur);
+            cur=cur->rChild;
+            while(cur){
+                st.push(cur);
+                cur=cur->lChild;
+            }
+        }
+    }    
+}
+
+//trave by level
+template <typename T,typename VST>
+void travLevel_I(BinNodePosi(T) x,VST& visit){
+    queue<BinNodePosi(T)> q;
+    q.push(x);
+
+    while(!q.empty()){
+        int n=q.size();
+        while(n--){
+            x=q.front();
+            q.pop();
+            visit(x->data);
+
+            if(x->lChild) q.push(x->lChild);
+            if(x->rChild) q.push(x->rChild);
+        }
+    }
+
     
 }
+
 

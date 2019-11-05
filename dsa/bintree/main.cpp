@@ -41,6 +41,7 @@ int main(int argc, char const *argv[])
     tree->insertAsLC(r,6);
 
     auto prt=Print<int>();
+    /*
     cout<<"Preorder recrusion:"<<endl;
     travPre_R(tree->root(),prt);
     cout<<endl;
@@ -68,6 +69,13 @@ int main(int argc, char const *argv[])
     cout<<"Level literation:"<<endl;
     travLevel_I(tree->root(),prt);
     cout<<endl;
+    */
 
+    cout<<"Preorder:"<<endl;
+    tree->travPre(prt);
+    cout<<endl;
+
+    tree->remove(tree->root()->lChild);
+    tree->travPre(prt);
     return 0;
 }

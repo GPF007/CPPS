@@ -1,6 +1,4 @@
 #include "binnode.h"
-#include <stack>
-#include <queue>
 
 using namespace std;
 
@@ -132,7 +130,7 @@ template <typename T>
 int BinTree<T>::removeAt(BinNodePosi(T) x){
     if(!x) return 0;
     int n = 1 + removeAt(x->lChild) + removeAt(x->rChild);
-    release(x->data);
+    //release(x->data);
     release(x);
     return n;
 }
@@ -164,7 +162,7 @@ BinTree<T>* BinTree<T>::secede(BinNodePosi(T) x){
 
 /* Traverse functions
     Out of class
-*/
+
 //recrusion version
 //preorder traverse
 template<typename T,typename VST>
@@ -279,3 +277,4 @@ void travLevel_I(BinNodePosi(T) x,VST& visit){
 }
 
 
+*/

@@ -47,7 +47,7 @@ int main(int argc, char const *argv[])
 
 
     tree->remove(6);
-    levelPrint(tree,prt);
+    levelPrint(tree,prt)    ;
 
     //inorderPrint(tree,prt);
 

@@ -28,10 +28,11 @@ typedef enum{RB_RED,RB_BLACK} RBColor;
     )
 
 #define uncle(x) ( \
-    IsLChild(*((x)->parent))? \
-    (p)->parent->parent->rChild:\
-    (p)->parent->parent->lChild\
-    )
+    IsRoot(*((x)->parent))?NULL:\
+    (IsLChild(*((x)->parent))?\
+    (x)->parent->parent->rChild:\
+    (x)->parent->parent->lChild\
+    ))
 
 //get the pointer from parent
 #define FromParentTo(x) (\

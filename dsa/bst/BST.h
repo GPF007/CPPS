@@ -100,6 +100,7 @@ BinNodePosi(T) BST<T>::connect34(//reconstruct by 3 and 4
     b->lChild = a; a->parent = b;
     b->rChild = c; c->parent = b; this->updateHeight(b);
 
+
     return b;
 
 }

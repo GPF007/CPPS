@@ -1,5 +1,6 @@
 #include <iostream>
 #include "matchs.h"
+#include "karp.h"
 
 using namespace std;
 
@@ -14,5 +15,8 @@ int main(int argc, char const *argv[])
 
     cout<<"KMP match:"<<endl;
     cout<<kmp_match(p,t)<<endl;
+
+    cout<<"Karp-Robin match:"<<endl;
+    cout<<match_kr(p,t)<<endl;
     return 0;
 }

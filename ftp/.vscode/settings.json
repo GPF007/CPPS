@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "utils.h": "c",
+        "server-dtp.h": "c",
+        "server-pi.h": "c"
+    }
+}

@@ -1,0 +1,9 @@
+foo     "hello my friend"  123 , ; :
+( ) [ ] { } . + - * / = <> <= >= < >
+
+& | := array if then else while for to do 
+let in end of break nil function var type
+
+/* this is a comment */
+// this is comment2
+print ("hello s");

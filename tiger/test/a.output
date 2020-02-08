@@ -1,0 +1,200 @@
+语法
+
+    0 $accept: line $end
+
+    1 line: expr '\n'
+
+    2 expr: expr '+' term
+    3     | expr '-' term
+    4     | term
+
+    5 term: term '*' factor
+    6     | factor
+
+    7 factor: '(' expr ')'
+    8       | DIGIT
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'\n' (10) 1
+'(' (40) 7
+')' (41) 7
+'*' (42) 5
+'+' (43) 2
+'-' (45) 3
+error (256)
+DIGIT (258) 8
+
+
+Nonterminals, with rules where they appear
+
+$accept (10)
+    左： 0
+line (11)
+    左： 1, 右： 0
+expr (12)
+    左： 2 3 4, 右： 1 2 3 7
+term (13)
+    左： 5 6, 右： 2 3 4 5
+factor (14)
+    左： 7 8, 右： 5 6
+
+
+State 0
+
+    0 $accept: . line $end
+
+    DIGIT  shift, and go to state 1
+    '('    shift, and go to state 2
+
+    line    转到状态 3
+    expr    转到状态 4
+    term    转到状态 5
+    factor  转到状态 6
+
+
+State 1
+
+    8 factor: DIGIT .
+
+    $default  reduce using rule 8 (factor)
+
+
+State 2
+
+    7 factor: '(' . expr ')'
+
+    DIGIT  shift, and go to state 1
+    '('    shift, and go to state 2
+
+    expr    转到状态 7
+    term    转到状态 5
+    factor  转到状态 6
+
+
+State 3
+
+    0 $accept: line . $end
+
+    $end  shift, and go to state 8
+
+
+State 4
+
+    1 line: expr . '\n'
+    2 expr: expr . '+' term
+    3     | expr . '-' term
+
+    '\n'  shift, and go to state 9
+    '+'   shift, and go to state 10
+    '-'   shift, and go to state 11
+
+
+State 5
+
+    4 expr: term .
+    5 term: term . '*' factor
+
+    '*'  shift, and go to state 12
+
+    $default  reduce using rule 4 (expr)
+
+
+State 6
+
+    6 term: factor .
+
+    $default  reduce using rule 6 (term)
+
+
+State 7
+
+    2 expr: expr . '+' term
+    3     | expr . '-' term
+    7 factor: '(' expr . ')'
+
+    '+'  shift, and go to state 10
+    '-'  shift, and go to state 11
+    ')'  shift, and go to state 13
+
+
+State 8
+
+    0 $accept: line $end .
+
+    $default  接受
+
+
+State 9
+
+    1 line: expr '\n' .
+
+    $default  reduce using rule 1 (line)
+
+
+State 10
+
+    2 expr: expr '+' . term
+
+    DIGIT  shift, and go to state 1
+    '('    shift, and go to state 2
+
+    term    转到状态 14
+    factor  转到状态 6
+
+
+State 11
+
+    3 expr: expr '-' . term
+
+    DIGIT  shift, and go to state 1
+    '('    shift, and go to state 2
+
+    term    转到状态 15
+    factor  转到状态 6
+
+
+State 12
+
+    5 term: term '*' . factor
+
+    DIGIT  shift, and go to state 1
+    '('    shift, and go to state 2
+
+    factor  转到状态 16
+
+
+State 13
+
+    7 factor: '(' expr ')' .
+
+    $default  reduce using rule 7 (factor)
+
+
+State 14
+
+    2 expr: expr '+' term .
+    5 term: term . '*' factor
+
+    '*'  shift, and go to state 12
+
+    $default  reduce using rule 2 (expr)
+
+
+State 15
+
+    3 expr: expr '-' term .
+    5 term: term . '*' factor
+
+    '*'  shift, and go to state 12
+
+    $default  reduce using rule 3 (expr)
+
+
+State 16
+
+    5 term: term '*' factor .
+
+    $default  reduce using rule 5 (term)

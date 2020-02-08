@@ -1,0 +1,21 @@
+let
+/* 类型声明 */
+type intlist = {hd : int, tl : intlist}
+type intlist = {hd : int}
+type a = int
+type b = array of string
+
+/*变量定义*/
+var foo := 12
+var bar : int := 14
+
+/*函数声明*/
+function f1 (t: int ) = 1
+function f2 (t: int, s: string) = 12
+
+in 
+
+    if x > 10 then x<10 else eee ;
+    print ("hello world!"
+end
+

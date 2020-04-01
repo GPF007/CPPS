@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gpf/cplus/CPPS/calculator/src/scanner.cc
+scanner.h
+/home/gpf/cplus/CPPS/calculator/src/scanner.h
+cctype
+-
+iostream
+-
+
+/home/gpf/cplus/CPPS/calculator/src/scanner.h
+fstream
+-
+token.h
+/home/gpf/cplus/CPPS/calculator/src/token.h
+
+/home/gpf/cplus/CPPS/calculator/src/token.h
+string
+-
+tokentype.h
+/home/gpf/cplus/CPPS/calculator/src/tokentype.h
+
+/home/gpf/cplus/CPPS/calculator/src/tokentype.h
+unordered_map
+-
+

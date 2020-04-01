@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/main.dir/src/main.cc.o CMakeFiles/main.dir/src/scanner.cc.o CMakeFiles/main.dir/src/token.cc.o  -o bin/main 

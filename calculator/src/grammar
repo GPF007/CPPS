@@ -1,0 +1,17 @@
+
+
+expr:  term{+ term}
+       term{- term}
+
+term:   factor{* factor}
+        factor{/ factor}
+
+fator:  ID
+        ID (expr{, expr})
+        ( expr )
+
+
+expr:   binary_expr
+    |   id 
+    |   ( expr )
+    |   integer

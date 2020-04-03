@@ -1,9 +1,29 @@
 #include "scanner.h"
+#include "sym.h"
 #include <cctype>
 #include <iostream>
+#include <unordered_map>
+
 
 using std::endl;
 using std::cout;
+
+
+extern Sym sym;
+
+
+std::unordered_map<char,std::string> table{
+    {'+',"+"},
+    {'-',"-"},
+    {'*',"*"},
+    {'/',"/"},
+    {'(',"("},
+    {')',")"},
+};
+
+
+
+
 
 void Scanner::skipWhite(){
 
@@ -44,8 +64,8 @@ void Scanner::put_back(){
     in_.unget();
 }
 
-Token Scanner::make_token(TOKEN tag, string val){
-    return Token(fname_, line_, column_, count_++, tag, val);
+Token Scanner::make_token(TOKEN tag, const string *val){
+    return Token(&fname_, line_, column_, count_++, tag, val);
 }
 
 Token Scanner::make_integer(){
@@ -57,7 +77,7 @@ Token Scanner::make_integer(){
     //读取完数字之后退回到流中
     put_back();
 
-    return make_token(TOKEN::ID, tmp);
+    return make_token(TOKEN::INTEGER,sym.get_sym_full(tmp));
 }
 
 Token Scanner::make_identifier(){
@@ -68,9 +88,11 @@ Token Scanner::make_identifier(){
     }
     //读取完标识符之后退回到流中
     put_back();
-    return make_token(TOKEN::INTEGER, tmp);
+
+    return make_token(TOKEN::INTEGER,sym.get_sym_full(tmp));
 
 }
+
 
 
 
@@ -80,20 +102,23 @@ Token Scanner::Scan(){
     skipWhite();
     switch (ch_)
     {
-    case '+': return make_token(TOKEN::PLUS, "+");
-    case '-': return make_token(TOKEN::MINUS, "-");
-    case '*': return make_token(TOKEN::TIMES, "*");
-    case '/': return make_token(TOKEN::DIVIDE, "/");
-    case '(': return make_token(TOKEN::LPAREN, "(");
-    case ')': return make_token(TOKEN::RPAREN, ")");
+    case '+': return make_token(TOKEN::PLUS, sym.get_sym_full(table['+']));
+    case '-': return make_token(TOKEN::MINUS, sym.get_sym_full(table['-']));
+    case '*': return make_token(TOKEN::TIMES, sym.get_sym_full(table['*']));
+    case '/': return make_token(TOKEN::DIVIDE, sym.get_sym_full(table['/']));
+    case '(': return make_token(TOKEN::LPAREN, sym.get_sym_full(table['(']));
+    case ')': return make_token(TOKEN::RPAREN, sym.get_sym_full(table[')']));
     case '0' ... '9': return make_integer();
     case 'a' ... 'z': return make_identifier();
-    case EOF: return make_token(TOKEN::eof, "EOF");;
+    case EOF: return make_token(TOKEN::eof, sym.get_sym_full("EOF"));
     default:
-        return make_token(TOKEN::UNRECOG, "UNRECOGNIZE");
+        return make_token(TOKEN::UNRECOG, sym.get_sym_full("UNRECOGNIZE"));
     }
 
-    return make_token(TOKEN::UNRECOG, "UNRECOGNIZE");
+
+    return make_token(TOKEN::UNRECOG, sym.get_sym_full("UNRECOGNIZE"));
 }
+
+
 
 

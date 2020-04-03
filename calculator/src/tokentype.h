@@ -1,4 +1,6 @@
-#include <unordered_map>
+#pragma once
+
+
 
 enum TOKEN{
     LPAREN,
@@ -17,15 +19,8 @@ enum TOKEN{
     eof,
 };
 
-/*
-std::unordered_map<char,std::string> table{
-    {'+',"+"},
-    {'-',"-"},
-    {'*',"*"},
-    {'/',"/"},
-    {'(',"("},
-    {')',")"},
-};
-*/
+
+
+
 
 

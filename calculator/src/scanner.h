@@ -1,10 +1,11 @@
 
 #include <fstream>
-
 #include "token.h"
 
 
+
 using std::string;
+
 
 
 class Scanner{
@@ -21,7 +22,7 @@ public:
     void readChar();
     void put_back();
 
-    Token make_token(TOKEN tag, string val);
+    Token make_token(TOKEN tag, const string *val);
     Token make_integer();
     Token make_identifier();
 

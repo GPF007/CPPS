@@ -20,6 +20,8 @@ public:
 class BinExpr : public Expr{
 public:
     BinExpr(Expr* l ,Expr *r, TOKEN o): left_(l),right_(r), op_(o){}
+    static BinExpr* New(Expr* l ,Expr *r, TOKEN o);
+
 
     string to_string() override;
 protected:
@@ -33,6 +35,7 @@ class IntExpr: public Expr{
 public:
 
     IntExpr(int val):val_(val){}
+    static IntExpr* New(int val);
     string to_string() override;
 
 protected:
@@ -45,6 +48,7 @@ class ParenExpr: public Expr{
 public:
 
     ParenExpr(Expr* e):expr_(e) {}
+    static ParenExpr* New(Expr* e);
     string to_string() override;
 
 protected:

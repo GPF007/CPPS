@@ -57,9 +57,22 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
+CMakeFiles/main.dir/src/ast.cc.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/ast.cc.o: src/ast.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/ast.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/ast.cc.o -c /home/gpf/cplus/CPPS/calculator/src/ast.cc
+
+CMakeFiles/main.dir/src/ast.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/ast.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gpf/cplus/CPPS/calculator/src/ast.cc > CMakeFiles/main.dir/src/ast.cc.i
+
+CMakeFiles/main.dir/src/ast.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/ast.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gpf/cplus/CPPS/calculator/src/ast.cc -o CMakeFiles/main.dir/src/ast.cc.s
+
 CMakeFiles/main.dir/src/main.cc.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cc.o: src/main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/main.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/main.cc.o -c /home/gpf/cplus/CPPS/calculator/src/main.cc
 
 CMakeFiles/main.dir/src/main.cc.i: cmake_force
@@ -70,9 +83,22 @@ CMakeFiles/main.dir/src/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gpf/cplus/CPPS/calculator/src/main.cc -o CMakeFiles/main.dir/src/main.cc.s
 
+CMakeFiles/main.dir/src/parse.cc.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/parse.cc.o: src/parse.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/parse.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/parse.cc.o -c /home/gpf/cplus/CPPS/calculator/src/parse.cc
+
+CMakeFiles/main.dir/src/parse.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/parse.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gpf/cplus/CPPS/calculator/src/parse.cc > CMakeFiles/main.dir/src/parse.cc.i
+
+CMakeFiles/main.dir/src/parse.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/parse.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gpf/cplus/CPPS/calculator/src/parse.cc -o CMakeFiles/main.dir/src/parse.cc.s
+
 CMakeFiles/main.dir/src/scanner.cc.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/scanner.cc.o: src/scanner.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/scanner.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/scanner.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/scanner.cc.o -c /home/gpf/cplus/CPPS/calculator/src/scanner.cc
 
 CMakeFiles/main.dir/src/scanner.cc.i: cmake_force
@@ -85,7 +111,7 @@ CMakeFiles/main.dir/src/scanner.cc.s: cmake_force
 
 CMakeFiles/main.dir/src/token.cc.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/token.cc.o: src/token.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/token.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/token.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/token.cc.o -c /home/gpf/cplus/CPPS/calculator/src/token.cc
 
 CMakeFiles/main.dir/src/token.cc.i: cmake_force
@@ -98,19 +124,23 @@ CMakeFiles/main.dir/src/token.cc.s: cmake_force
 
 # Object files for target main
 main_OBJECTS = \
+"CMakeFiles/main.dir/src/ast.cc.o" \
 "CMakeFiles/main.dir/src/main.cc.o" \
+"CMakeFiles/main.dir/src/parse.cc.o" \
 "CMakeFiles/main.dir/src/scanner.cc.o" \
 "CMakeFiles/main.dir/src/token.cc.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
+bin/main: CMakeFiles/main.dir/src/ast.cc.o
 bin/main: CMakeFiles/main.dir/src/main.cc.o
+bin/main: CMakeFiles/main.dir/src/parse.cc.o
 bin/main: CMakeFiles/main.dir/src/scanner.cc.o
 bin/main: CMakeFiles/main.dir/src/token.cc.o
 bin/main: CMakeFiles/main.dir/build.make
 bin/main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin/main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gpf/cplus/CPPS/calculator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

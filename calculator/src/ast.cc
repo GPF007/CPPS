@@ -1,5 +1,29 @@
 
 #include "ast.h"
+#include "mempool.h"
+
+#define BUF 10
+//各种mempool定义
+Alloc<IntExpr> intPool(BUF);
+Alloc<BinExpr> binPool(BUF);
+Alloc<ParenExpr> parenPool(BUF);
+
+
+
+//用来new的静态方法哦
+
+IntExpr* IntExpr:: New(int val){
+    return intPool.newElement(val);
+}
+ParenExpr* ParenExpr::New(Expr* e){
+    return parenPool.newElement(e);
+}
+BinExpr* BinExpr::New(Expr* l ,Expr *r, TOKEN o){
+    return binPool.newElement(l,r,o);
+}
+
+
+
 
 string Expr::to_string(){
     return string("Expr");
@@ -31,4 +55,5 @@ string ParenExpr::to_string(){
     string res("Parent(");
     return res + expr_->to_string() + ")";
 }
+
 

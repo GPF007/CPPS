@@ -6,27 +6,71 @@
 
 #IncludeRegexTransform: 
 
-/home/gpf/cplus/CPPS/calculator/src/scanner.cc
-scanner.h
-/home/gpf/cplus/CPPS/calculator/src/scanner.h
-cctype
+/home/gpf/cplus/CPPS/calculator/src/ast.h
+string
 -
+tokentype.h
+/home/gpf/cplus/CPPS/calculator/src/tokentype.h
+
+/home/gpf/cplus/CPPS/calculator/src/main.cc
 iostream
 -
+cstdlib
+-
+vector
+-
+scanner.h
+/home/gpf/cplus/CPPS/calculator/src/scanner.h
+sym.h
+/home/gpf/cplus/CPPS/calculator/src/sym.h
+parse.h
+/home/gpf/cplus/CPPS/calculator/src/parse.h
+
+/home/gpf/cplus/CPPS/calculator/src/mempool.h
+memory
+-
+vector
+-
+
+/home/gpf/cplus/CPPS/calculator/src/parse.h
+vector
+-
+cstdlib
+-
+cstdio
+-
+unordered_map
+-
+ast.h
+/home/gpf/cplus/CPPS/calculator/src/ast.h
+token.h
+/home/gpf/cplus/CPPS/calculator/src/token.h
+mempool.h
+/home/gpf/cplus/CPPS/calculator/src/mempool.h
 
 /home/gpf/cplus/CPPS/calculator/src/scanner.h
 fstream
 -
 token.h
 /home/gpf/cplus/CPPS/calculator/src/token.h
+mempool.h
+/home/gpf/cplus/CPPS/calculator/src/mempool.h
+
+/home/gpf/cplus/CPPS/calculator/src/sym.h
+unordered_set
+-
+string
+-
 
 /home/gpf/cplus/CPPS/calculator/src/token.h
 string
 -
+vector
+-
 tokentype.h
 /home/gpf/cplus/CPPS/calculator/src/tokentype.h
+iostream
+-
 
 /home/gpf/cplus/CPPS/calculator/src/tokentype.h
-unordered_map
--
 

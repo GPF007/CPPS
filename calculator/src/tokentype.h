@@ -1,7 +1,6 @@
 #pragma once
 
 
-
 enum TOKEN{
     LPAREN,
     RPAREN,
@@ -10,15 +9,20 @@ enum TOKEN{
     TIMES,
     DIVIDE,
     EQUAL,
+    SEMI,
 
     INTEGER,
     ID,
+
+    /*key word*/
+    RETURN,
+    IF,
+    ELSE,
 
 
     UNRECOG,
     eof,
 };
-
 
 
 

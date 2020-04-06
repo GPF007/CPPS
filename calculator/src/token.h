@@ -1,11 +1,15 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include "tokentype.h"
+
+#include <iostream>
 
 using std::string;
 
 // enum TOKEN;
+
 
 
 class Token{
@@ -13,8 +17,10 @@ class Token{
 public:
 
     Token() = default;
-    Token(string *fname, int line, int column, int count, TOKEN tag, const string* value):
+    Token(const string *fname, int line, int column, int count, TOKEN tag, const string* value):
         fname_(fname),line_(line),column_(column), count_(count), tag_(tag), value_(value){}
+    
+    static Token* New(const string *fname, int line, int column, int count, TOKEN tag, const string* value);
 
 
     bool is_eof() { return tag_ == TOKEN::eof;}
@@ -27,7 +33,7 @@ public:
 
 private:
     //location
-    string *fname_;
+    const string *fname_;
     int line_;
     int column_;
     //文件中第n个token
@@ -35,9 +41,32 @@ private:
 
     TOKEN tag_; //token的类型
     const string *value_; //token的字面值
-   
-
 };
 
+
+class TokenList{
+
+
+public:
+    TokenList() = default;
+
+    void show(){
+        for(auto &tok:token_list){
+            std::cout<<tok->to_string()<<std::endl;
+        }
+    }
+    
+    void add(Token* t) {token_list.push_back(t);}
+
+    Token*& next(){return (token_list)[idx++];}
+    Token*& peek(){return (token_list)[idx];}
+    void put_back() {--idx;}
+    void expect();
+
+
+private:
+    std::vector<Token*> token_list;
+    size_t idx=0;
+};
 
 

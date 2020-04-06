@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/gpf/cplus/CPPS/calculator/src/ast.cc" "/home/gpf/cplus/CPPS/calculator/CMakeFiles/main.dir/src/ast.cc.o"
   "/home/gpf/cplus/CPPS/calculator/src/main.cc" "/home/gpf/cplus/CPPS/calculator/CMakeFiles/main.dir/src/main.cc.o"
+  "/home/gpf/cplus/CPPS/calculator/src/parse.cc" "/home/gpf/cplus/CPPS/calculator/CMakeFiles/main.dir/src/parse.cc.o"
   "/home/gpf/cplus/CPPS/calculator/src/scanner.cc" "/home/gpf/cplus/CPPS/calculator/CMakeFiles/main.dir/src/scanner.cc.o"
   "/home/gpf/cplus/CPPS/calculator/src/token.cc" "/home/gpf/cplus/CPPS/calculator/CMakeFiles/main.dir/src/token.cc.o"
   )

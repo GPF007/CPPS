@@ -7,6 +7,7 @@
 
 
 
+
 using namespace std;
 Sym sym;
 
@@ -17,30 +18,34 @@ int main(int argc, char const *argv[])
         cerr<<"usage: ./main <filename>"<<endl;
         exit(EXIT_FAILURE);
     }
-    Scanner scanner(argv[1]);
+    string fname = string(argv[1]);
+    Scanner scanner(&fname);
+    TokenList token_list;
 
-    Token tok;
+    Token *tok;
     int i =0;
 
-    vector<Token> token_list;
-    
     
     for(;;){
         tok = scanner.Scan();
-        token_list.push_back(tok);
-        if(tok.is_eof()) break;
-        //cout<<tok.to_string()<<endl;
+        //cout<<"make token done!"<<endl;
+        token_list.add(tok);
+        if(tok->is_eof()) break;
+       // cout<<tok->to_string()<<endl;
         ++i;
           //if(i==14) break;       
     }
+    token_list.show();
 
-    Parser parser(token_list);
-    parser.show();
+    
+    Parser parser(&token_list);
+    //parser.show();
 
     //int res = parser.parse();
     Expr* expr = parser.parse();
-    cout<<expr->to_string()<<endl;
-
+    parser.show();
+    //cout<<expr->to_string()<<endl;
+    
 
    //Sym::put_sym(20);
 

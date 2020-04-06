@@ -123,6 +123,33 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/ast.o: src/ast.cc.o
+
+.PHONY : src/ast.o
+
+# target to build an object file
+src/ast.cc.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ast.cc.o
+.PHONY : src/ast.cc.o
+
+src/ast.i: src/ast.cc.i
+
+.PHONY : src/ast.i
+
+# target to preprocess a source file
+src/ast.cc.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ast.cc.i
+.PHONY : src/ast.cc.i
+
+src/ast.s: src/ast.cc.s
+
+.PHONY : src/ast.s
+
+# target to generate assembly for a file
+src/ast.cc.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ast.cc.s
+.PHONY : src/ast.cc.s
+
 src/main.o: src/main.cc.o
 
 .PHONY : src/main.o
@@ -149,6 +176,33 @@ src/main.s: src/main.cc.s
 src/main.cc.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cc.s
 .PHONY : src/main.cc.s
+
+src/parse.o: src/parse.cc.o
+
+.PHONY : src/parse.o
+
+# target to build an object file
+src/parse.cc.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/parse.cc.o
+.PHONY : src/parse.cc.o
+
+src/parse.i: src/parse.cc.i
+
+.PHONY : src/parse.i
+
+# target to preprocess a source file
+src/parse.cc.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/parse.cc.i
+.PHONY : src/parse.cc.i
+
+src/parse.s: src/parse.cc.s
+
+.PHONY : src/parse.s
+
+# target to generate assembly for a file
+src/parse.cc.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/parse.cc.s
+.PHONY : src/parse.cc.s
 
 src/scanner.o: src/scanner.cc.o
 
@@ -213,9 +267,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... main"
 	@echo "... edit_cache"
+	@echo "... src/ast.o"
+	@echo "... src/ast.i"
+	@echo "... src/ast.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parse.o"
+	@echo "... src/parse.i"
+	@echo "... src/parse.s"
 	@echo "... src/scanner.o"
 	@echo "... src/scanner.i"
 	@echo "... src/scanner.s"

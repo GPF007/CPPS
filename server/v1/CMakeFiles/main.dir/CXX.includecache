@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gpf/server/v1/src/server.cc
+server.h
+/home/gpf/server/v1/src/server.h
+utils.h
+/home/gpf/server/v1/src/utils.h
+threadpool.h
+/home/gpf/server/v1/src/threadpool.h
+cstring
+-
+cstdlib
+-
+unistd.h
+-
+errno.h
+-
+stdio.h
+-
+
+/home/gpf/server/v1/src/server.h
+sys/socket.h
+-
+netdb.h
+-
+
+/home/gpf/server/v1/src/threadpool.h
+pthread.h
+-
+unistd.h
+-
+stdlib.h
+-
+
+/home/gpf/server/v1/src/utils.h
+

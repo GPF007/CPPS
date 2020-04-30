@@ -1,0 +1,3 @@
+/home/gpf/server/v1/CMakeFiles/rebuild_cache.dir
+/home/gpf/server/v1/CMakeFiles/main.dir
+/home/gpf/server/v1/CMakeFiles/edit_cache.dir

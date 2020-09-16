@@ -93,7 +93,7 @@ expr(A) ::= NAME(B).
 
 expr(A) ::= NAME(B) LP expr(C) RP.
     {
-        printf("B.symt->name is [%s]\n",B.symt->name);
+        printf("B.name is [%s]\n",B.symt->name);
         if(B.symt->funcptr){
             A.value = (B.symt->funcptr) (C.value);
         }else{
@@ -181,7 +181,7 @@ static char* getstring(char* z, int n){
         exit(1);
     }
     strncpy(paz, z, n);
-    paz[n]='\n';
+    paz[n]='\0';
     return paz;
 }
 
@@ -240,13 +240,17 @@ int main(){
     t0->symt = NULL;
 
     tokenType = (int*)malloc(sizeof(int));
-    z = (char*)malloc(1024);
+    //z = (char*)malloc(1024);
+    //char z[1024];
+    char buf[1024];
     void* pParser = ParseAlloc(malloc);
 
     while(1){
-        gets(z);
-        if(z=="") break;
-        strcat(z,"\n");
+        fgets(buf,1024,stdin);
+        if(strcmp("q\n",buf)==0) break;
+        //strcat(buf,"\n");
+        //printf("z is [%s]\n",z);
+        char* z =buf;
         while(*z){
             n = getToken(z, tokenType);
             if(*tokenType == NUM){

@@ -1,18 +1,40 @@
-Input 'NAME' in state 0
+Input 'NUM' in state 0
 Reduce 14 [in ::=].
 ... then shift 'in', go to state 1
-Shift 'NAME', go to state 18
-Return. Stack=[in NAME]
-Input 'LP' in state 18
-Shift 'LP', go to state 3
-Return. Stack=[in NAME LP]
-Input 'NUM' in state 3
 Shift 'NUM', pending reduce 8
-Return. Stack=[in NAME LP NUM]
-Input 'RP' with pending reduce 8
-Reduce 8 [expr ::= NUM], go to state 3.
-... then shift 'expr', go to state 11
-Shift 'RP', pending reduce 10
-Return. Stack=[in NAME LP expr RP]
-Input 'NEWLINE' with pending reduce 10
-Reduce 10 [expr ::= NAME LP expr RP], go to state 1.
+Return. Stack=[in NUM]
+Input 'NEWLINE' with pending reduce 8
+Reduce 8 [expr ::= NUM], go to state 1.
+... then shift 'expr', go to state 14
+Reduce 1 [program ::= expr], go to state 1.
+... then shift 'program', go to state 23
+Shift 'NEWLINE', pending reduce 15
+Return. Stack=[in program NEWLINE]
+Input 'NUM' with pending reduce 15
+Reduce 15 [in ::= in program NEWLINE], go to state 0.
+... then shift 'in', go to state 1
+Shift 'NUM', pending reduce 8
+Return. Stack=[in NUM]
+Input 'PLUS' with pending reduce 8
+Reduce 8 [expr ::= NUM], go to state 1.
+... then shift 'expr', go to state 14
+Shift 'PLUS', go to state 8
+Return. Stack=[in expr PLUS]
+Input 'NUM' in state 8
+Shift 'NUM', pending reduce 8
+Return. Stack=[in expr PLUS NUM]
+Input 'NEWLINE' with pending reduce 8
+Reduce 8 [expr ::= NUM], go to state 8.
+... then shift 'expr', go to state 16
+Reduce 3 [expr ::= expr PLUS expr], go to state 1.
+... then shift 'expr', go to state 14
+Reduce 1 [program ::= expr], go to state 1.
+... then shift 'program', go to state 23
+Shift 'NEWLINE', pending reduce 15
+Return. Stack=[in program NEWLINE]
+Input '$' with pending reduce 15
+Reduce 15 [in ::= in program NEWLINE], go to state 0.
+... then shift 'in', go to state 1
+Reduce 12 [main ::= in], go to state 0.
+... then shift 'main', pending reduce -2
+Accept!

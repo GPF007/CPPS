@@ -1,0 +1,18 @@
+Input 'NAME' in state 0
+Reduce 14 [in ::=].
+... then shift 'in', go to state 1
+Shift 'NAME', go to state 18
+Return. Stack=[in NAME]
+Input 'LP' in state 18
+Shift 'LP', go to state 3
+Return. Stack=[in NAME LP]
+Input 'NUM' in state 3
+Shift 'NUM', pending reduce 8
+Return. Stack=[in NAME LP NUM]
+Input 'RP' with pending reduce 8
+Reduce 8 [expr ::= NUM], go to state 3.
+... then shift 'expr', go to state 11
+Shift 'RP', pending reduce 10
+Return. Stack=[in NAME LP expr RP]
+Input 'NEWLINE' with pending reduce 10
+Reduce 10 [expr ::= NAME LP expr RP], go to state 1.

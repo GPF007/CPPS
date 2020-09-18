@@ -842,9 +842,11 @@ void FindFirstSets(struct lemon *lemp)
   struct rule *rp;
   int progress;
 
+  //lambda 初始化位false，如果为true时，表示该文法右边可以是空串
   for(i=0; i<lemp->nsymbol; i++){
     lemp->symbols[i]->lambda = LEMON_FALSE;
   }
+  //所有的非终结符号安置一个set
   for(i=lemp->nterminal; i<lemp->nsymbol; i++){
     lemp->symbols[i]->firstset = SetNew();
   }
@@ -853,11 +855,11 @@ void FindFirstSets(struct lemon *lemp)
   do{
     progress = 0;
     for(rp=lemp->rule; rp; rp=rp->next){
-      if( rp->lhs->lambda ) continue;
+      if( rp->lhs->lambda ) continue;//该rule右边为空串 直接到下一条规则
       for(i=0; i<rp->nrhs; i++){
         struct symbol *sp = rp->rhs[i];
         assert( sp->type==NONTERMINAL || sp->lambda==LEMON_FALSE );
-        if( sp->lambda==LEMON_FALSE ) break;
+        if( sp->lambda==LEMON_FALSE ) break; //说明不为空，直接break
       }
       if( i==rp->nrhs ){
         rp->lhs->lambda = LEMON_TRUE;
